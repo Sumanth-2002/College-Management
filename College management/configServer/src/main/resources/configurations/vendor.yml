@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb   # H2 in-memory database
+    username: sa               # Default username for H2
+    password: password         # Default password for H2 (can be changed)
+    driver-class-name: org.h2.Driver
+    platform: h2               # Specify H2 platform
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect  # Use H2 dialect for Hibernate
+    hibernate:
+      ddl-auto: update         # Automatically update schema (use create-drop for testing)
+      show-sql: true            # Show SQL queries in the console
+
+application:
+  name: vendor
